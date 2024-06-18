@@ -1,9 +1,11 @@
 <div align="center" id="top"> 
   <img src="./screenshot/Homepage.png" alt="Homepage" />
+  <img src="./screenshot/Detail.png" alt="Detail" />
 
 &#xa0;
 
-  <!-- <a href="https://carimahasiswa.netlify.app">Demo</a> -->
+<a href="cari-mahasiswa-indo.vercel.app">Demo</a>
+
 </div>
 
 <h1 align="center">Cari Mahasiswa</h1>
