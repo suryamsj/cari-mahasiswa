@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url }) {
-	const search = url.searchParams.get('search') || 'Muhammad Surya Jayadiprana';
+	const search = encodeURIComponent(url.searchParams.get('search') || 'Muhammad Surya Jayadiprana');
 	const api = dev ? URL_DEV : URL_PROD;
 
 
