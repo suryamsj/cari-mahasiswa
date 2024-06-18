@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.costume-shadow {
+	transition: box-shadow .3s ease-in-out;
+}
+
+.icon-shadow {
+	transition: box-shadow .3s ease-in-out;
+}
+
+.icon{
+	display: none;
+}
+
+.costume-shadow:hover{
+	box-shadow: 5px 7px 0 #000000;
+}
+
+.icon-shadow:hover{
+	box-shadow: 3px 5px 0 #000000;
+}
+
+h1 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
