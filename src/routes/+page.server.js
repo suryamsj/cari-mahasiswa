@@ -3,10 +3,9 @@ import { URL_DEV, URL_PROD } from '$env/static/private';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ url }) {
+export async function load({ url, fetch }) {
 	const search = encodeURIComponent(url.searchParams.get('search') || 'Muhammad Surya Jayadiprana');
 	const api = dev ? URL_DEV : URL_PROD;
-
 
 	/**
 	 * @param {string} params

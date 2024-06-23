@@ -29,19 +29,23 @@ export async function GET({ params }) {
 			);
 		}
 
-		const mahasiswa = data.mahasiswa.map((/** @type {{ [x: string]: string; text: { split: (arg0: string, arg1: number) => [any, any]; }; }} */ item) => {
-			const [namePart, rest] = item.text.split('(', 2);
-			const [nimPart, ptProdiPart] = rest.split('),', 2);
-			const [ptPart, prodiPart] = ptProdiPart.split(', Prodi:', 2);
+		const mahasiswa = data.mahasiswa.map(
+			(
+				/** @type {{ [x: string]: string; text: { split: (arg0: string, arg1: number) => [any, any]; }; }} */ item
+			) => {
+				const [namePart, rest] = item.text.split('(', 2);
+				const [nimPart, ptProdiPart] = rest.split('),', 2);
+				const [ptPart, prodiPart] = ptProdiPart.split(', Prodi:', 2);
 
-			return {
-				name: namePart.trim(),
-				nim: nimPart.trim(),
-				pt: ptPart.replace('PT :', '').trim(),
-				prodi: prodiPart.trim(),
-				detail: item['website-link'].split('/').pop()
-			};
-		});
+				return {
+					name: namePart.trim(),
+					nim: nimPart.trim(),
+					pt: ptPart.replace('PT :', '').trim(),
+					prodi: prodiPart.trim(),
+					detail: item['website-link'].split('/').pop()
+				};
+			}
+		);
 
 		return json({ mahasiswa }, { status: 200 });
 	} catch (e) {
